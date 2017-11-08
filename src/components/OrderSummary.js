@@ -11,17 +11,21 @@ class OrderSummary extends React.Component {
     //     // this.state={
     //     //     products:sampleProducts
     //     // };
-        
+
     // }
     render() {
         return (
             <section className="order-summary">
+                <div class="order-summary-title">
+                    <h3>Order Summary</h3>
+                    <span class="change-order">Change</span>
+                </div>
                 <div className="my-orders-wrapper">
-                {
-                    Object
-                        .keys(this.props.products)
-                        .map(key => <Products key={key} details={this.props.products[key]}/> )
-                }
+                    {
+                        Object
+                            .keys(this.props.products)
+                            .map(key => <Products key={key} details={this.props.products[key]} />)
+                    }
                 </div>
             </section>
         )

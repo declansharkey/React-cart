@@ -26,7 +26,7 @@ const products = {
   },
 
   product4: {
-    name: 'Mug',
+    name: 'Mug, 4oz',
     image: 'http://via.placeholder.com/72x72',
     quantity: 32,
     price: 1129,

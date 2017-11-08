@@ -17,8 +17,8 @@ class App extends React.Component {
                 <Title page="Delivery &amp; Payment Methods" />
                 <DeliveryMethods />
                 <PaymentMethods />
-                <OrderSummary products={this.cartModel.products} />
                 <OrderTotal />
+                <OrderSummary products={this.cartModel.products} />
             </div>
         )
     }

@@ -98,6 +98,7 @@ body{
         box-sizing: border-box;
         .title{
             margin-top: 20px;
+            grid-column: 1/5;
             .steps{
                 color: #b3b3b3;
             }
@@ -447,7 +448,6 @@ body{
             grid-row-gap: 16px;
             .title{
                 margin-top: 20px;
-                grid-column: 2/12;
             }
             .cart-main{
                 display: grid;
@@ -495,7 +495,7 @@ body{
     body{
         #cart-wrapper{
             .title{
-                grid-column: 1/12;
+                grid-column: 1/13;
                 grid-row: 1;
             }
             .cart-main{
