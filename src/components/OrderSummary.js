@@ -25,17 +25,23 @@ class OrderSummary extends React.Component {
                 </div>
                 <div className="my-orders-wrapper">
                     {
-                        Object
-                            .keys(this.props.products)
-                            .map(key => <Products
-                                key={key}
-                                details={this.props.products[key]}
-                            />)
+                        
+                            // this.props.products.map(key => <Products
+                            //     key={key}
+                            //     details={this.props.products[key]}
+                            // />)
+                            this.renderProducts()
                     }
                 </div>
                 <button onClick={this.props.clear}> clear </button>
             </section>
         )
+    }
+
+    renderProducts(){
+        return this.props.products.map((product, index) => {
+            return <Products details={product} key={index}/>
+        })
     }
 }
 

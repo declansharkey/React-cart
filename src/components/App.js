@@ -14,6 +14,7 @@ class App extends React.Component {
 
     render() {
         console.log(this.cartModel.products);
+        this.cartModel.remove('Prints 4 x 6');
         return (
             <div className="cart-main">
                 <Title page="Delivery &amp; Payment Methods" />

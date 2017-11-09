@@ -7,12 +7,21 @@ export default class CartModel {
     @observable products = [];
 
     constructor() {
-        this.products = products;
+        //setting up this.products array
+        Object.keys(products).map((key) => {
+            return this.products.push(products[key])
+        })
     }
 
-    @action.bound clear =() => {
+    @action.bound clear = () => {
         console.log('clearing');
         this.products = [];
+    }
+
+    @action.bound remove =(name)=> {
+        this.products  = this.products.filter((product)=> {
+           return product.name !== name;
+        })
     }
 
     // observable = any object or primitive that you want to see and change
