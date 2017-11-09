@@ -1,21 +1,24 @@
 
 import products from '../sample-products';
-import { observable } from 'mobx';
+import { observable, action } from 'mobx';
 
 export default class CartModel {
 
-    products = observable([]);
+    @observable products = [];
 
     constructor() {
         this.products = products;
     }
 
-    getTotalPrice = () => {
-        let price = 0;
-        this.products.forEach((product) => {
-            price = price + product.price;
-        })
-        return price;
+    @action.bound clear =() => {
+        console.log('clearing');
+        this.products = [];
     }
+
+    // observable = any object or primitive that you want to see and change
+
+    // action = changes an observable
+
+    //observer = the thing that will rerender based on your change
 
 }

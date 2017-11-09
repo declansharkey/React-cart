@@ -1,6 +1,8 @@
 import React from 'react';
 import Products from '../components/Products'
+import { observer } from 'mobx-react';
 
+@observer
 class OrderSummary extends React.Component {
     // passing cartModel from parent
 
@@ -14,6 +16,7 @@ class OrderSummary extends React.Component {
 
     // }
     render() {
+
         return (
             <section className="order-summary">
                 <div class="order-summary-title">
@@ -24,9 +27,13 @@ class OrderSummary extends React.Component {
                     {
                         Object
                             .keys(this.props.products)
-                            .map(key => <Products key={key} details={this.props.products[key]} />)
+                            .map(key => <Products
+                                key={key}
+                                details={this.props.products[key]}
+                            />)
                     }
                 </div>
+                <button onClick={this.props.clear}> clear </button>
             </section>
         )
     }

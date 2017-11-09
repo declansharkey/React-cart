@@ -5,10 +5,12 @@ import PaymentMethods from './PaymentMethod';
 import OrderSummary from './OrderSummary';
 import OrderTotal from './OrderTotal';
 import CartModel from '../models/CartModel';
+import { observer } from 'mobx-react';
+
+@observer
 class App extends React.Component {
 
     cartModel = new CartModel();
- 
 
     render() {
         console.log(this.cartModel.products);
@@ -18,7 +20,11 @@ class App extends React.Component {
                 <DeliveryMethods />
                 <PaymentMethods />
                 <OrderTotal />
-                <OrderSummary products={this.cartModel.products} />
+                <OrderSummary
+                    products={this.cartModel.products}
+                    clear={this.cartModel.clear}
+                    remove={this.cartModel.remove}
+                />
             </div>
         )
     }
